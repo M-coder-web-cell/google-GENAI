@@ -4,7 +4,7 @@ import ContentGeneration.StoryGeneration as Sg
 app = Flask(__name__)
 
 
-@app.route("processData", methods =['POST'])
+@app.route("/generatestory", methods =['POST'])
 def ReceivePrompt():
     try:
         #request.is_json checks if content type is application/json
@@ -21,8 +21,9 @@ def ReceivePrompt():
         }), 200
 
     except Exception as e:
-        return jsonify({"Status" : f"An Internal server error has occured",
-                        "error": str(e)}), 500
+        return jsonify({
+            "Status" : f"An Internal server error has occured",
+            "error": str(e)}), 500
 
 
 if __name__ == "__main__":
