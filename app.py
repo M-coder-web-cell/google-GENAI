@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 import ContentGeneration.StoryGeneration as Sg
+from google import genai
+import os
 
 app = Flask(__name__)
 
+genaiClient = genai.Client(api_key=os.environ.get("GEMINI-API-KEY"))
 
 @app.route("/generatestory", methods =['POST'])
 def ReceivePrompt():

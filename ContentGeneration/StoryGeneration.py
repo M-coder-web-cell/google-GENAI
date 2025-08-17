@@ -1,9 +1,8 @@
 from google import genai
 from google.genai import types
 import os
+from app import genaiClient as client
 
-
-client = genai.Client(api_key=os.environ.get("GEMINI-API-KEY"))
 
 def generateStory( UserPrompt : str):
     with open('systemInstruction.txt', "r") as file:
