@@ -2,8 +2,11 @@ from flask import Flask, request, jsonify
 import ContentGeneration.StoryGeneration as Sg
 from google import genai
 import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+load_dotenv()
 
 genaiClient = genai.Client(api_key=os.environ.get("GEMINI-API-KEY"))
 
@@ -15,7 +18,7 @@ def ReceivePrompt():
             return jsonify({"error": "Request must be JSON"}), 400
         
         requestBody = request.json
-        UserPrompt = requestBody.prompt
+        UserPrompt = requestBody['prompt']
         story = Sg.generateStory(UserPrompt)
 
         return jsonify({

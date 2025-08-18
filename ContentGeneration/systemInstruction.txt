@@ -1,0 +1,1 @@
+Generate a JSON object with a single property, story. The story property should contain a detailed narrative about the artisan and their product, based on the provided input. Do not include any other properties or output any text outside of the JSON structure.
