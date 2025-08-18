@@ -1,6 +1,6 @@
 from google.genai import types
 from app import genaiClient as client
-import json,os
+import json
 
 
 
@@ -35,8 +35,9 @@ def createImages( prompt : str, number : int):
     )
     return response
 
-imagenPrompt ="Professional product photography of a small, hand-carved wooden rhino sculpture from Assam. The rhino is carved from a single piece of rich, dark mango wood, showcasing intricate chisel marks and a smooth, polished finish. It is placed on a clean, rustic slice of teak wood with a soft-focus, bokeh background of lush green foliage. The scene is bathed in soft, natural morning light, creating gentle highlights on the rhino's form and casting a soft shadow. Close-up shot, rule of thirds composition, photorealistic, hyper-detailed, sharp focus, 8K."
 
+#for testing, ek client activate karke dekhlena idhar
+imagenPrompt = ""
 def main():
     createImages(imagenPrompt, 2)
 

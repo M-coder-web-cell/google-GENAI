@@ -2,9 +2,11 @@ from flask import Flask, request, jsonify
 import ContentGeneration.StoryGeneration as Sg
 from google import genai
 import os
+from flask_cors import CORS
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+CORS(app)
 
 load_dotenv()
 
